@@ -1,5 +1,6 @@
 import * as express from 'express';
 import * as bodyParser from 'body-parser';
+import * as cors from 'cors';
 
 import Database from './infra/db';
 import NewsController from './controller/newsController';
@@ -16,6 +17,13 @@ class StartUp {
         this._db.createConnection();
         this.middler();
         this.routes();
+    }
+
+    enableCors() {
+        const options: cors.CorsOptions = {
+            methods: "GET, OPTIONS, PUT, POST, DELETE",
+            origin: "*"
+        }
     }
 
     middler() {
