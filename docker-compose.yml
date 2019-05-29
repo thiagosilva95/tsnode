@@ -1,0 +1,15 @@
+version: "3"
+services:
+  api:
+    image: thiagosilva95/tsnode
+    ports:
+      - "5000:3050"
+    links:
+      - link-db
+  link-db:
+    image: mongo:3.4
+    ports:
+      - "27017:27017"
+      - "28017:28017"
+    environment:
+      - AUTH=no
