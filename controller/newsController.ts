@@ -24,7 +24,6 @@ class NewsController {
                     .catch(error => console.error.bind(console, `Error ${error}`));
             }
         });
-        
     }
 
     getById(req, res) {
