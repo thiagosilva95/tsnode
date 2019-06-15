@@ -8,3 +8,5 @@ services:
       - "5000:3050"
     links:
       - link-db
+  redis:
+    image: "redis"
